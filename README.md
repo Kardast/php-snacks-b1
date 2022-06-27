@@ -28,8 +28,16 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 
 
 Snack 3
-Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post.
+Creare un array di array. 
 Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z
+<!-- ok -->
+
+Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. 
+<!-- ok -->
+
+Stampare ogni data con i relativi post.
+<!-- ok -->
 
 Snack 4
 Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+<!-- ok -->
