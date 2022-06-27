@@ -47,15 +47,23 @@ $posts = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_snack3.css">
     <title>Document</title>
 </head>
 <body><?php
 
     $arr_length = count($posts);
+    $keys = array_keys($posts);
+
     for ($_i=0; $_i < $arr_length ; $_i++) { 
-        $user_post = $posts[$_i];
-        // echo $_i;
-        echo "$user_post[0]";
+
+        $post = $posts[$keys[$_i]];
+        echo "<div> {$keys[$_i]} </div>";
+
+        for ($_j=0; $_j < count($post); $_j++) { 
+            $page = $post[$_j];
+            echo "<span> {$page['title']} <br> {$page['author']} <br> {$page['text']} </span>";
+        }
     }
     ?>
 </body>
