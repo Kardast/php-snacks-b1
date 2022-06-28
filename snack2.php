@@ -1,50 +1,41 @@
 <?php
-$name = $_GET['name'];
-$mail = $_GET['mail'];
-$age = $_GET['age'];
-
+$name = isset($_GET['name']) ? $_GET['name'] : '';
+$mail = $_GET['mail'] ?? '';
+$age = $_GET['age'] ?? '';
+// utilizzando il ?? stai scrivendo: //isset($_GET['name']) ? $_GET['name'] : ''//
 
 if (strlen($name) > 3) {
-
-    $message1 = "ok lunghezza";
 
     $position_at = strpos($mail, '@');
 
     if ($position_at !== false) {
 
-        $message2 = "ok chiocciola";
-
         $position_dot = strpos($mail, '.', $position_at);
 
         if ($position_dot !== false) {
-
-            $message3 = "ok chiocciola e punto";
 
             $age_number = is_numeric($age);
 
             if ($age_number !== false) {
 
-                $message4 = "ok numero età";
-
-                $result = "Accesso Riuscito";
+                echo 'Acesso riuscito';
             } else {
 
-                $message4 = "nope numero età";
-
-                $result = "Accesso Negato";
+                echo 'Acesso negato';
             }
 
         } else {
 
-            $message3 = "nope chiocciola e punto";
+            echo 'Acesso negato';
         }
     } else {
 
-        $message2 = "nope chiocciola";
+        echo 'Acesso negato';
     }
 
 } else{
-    $message1 = "nope lunghezza";
+
+    echo 'Acesso negato';
 }
 
 ?>
@@ -62,13 +53,5 @@ if (strlen($name) > 3) {
     <p><?= var_dump($name)?></p>
     <p><?= var_dump($mail)?></p>
     <p><?= var_dump($age)?></p>
-    <h4><?= $message1?></h4>
-    <h4><?= $message2?></h4>
-    <h4><?= $message3?></h4>
-    <h4><?= $message4?></h4>
-
-    <h1><?= $result?></h1>
-
-
 </body>
 </html>
