@@ -39,32 +39,24 @@ $posts = [
         ]
     ],
 ];
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_snack3.css">
-    <title>Document</title>
-</head>
-<body><?php
 
-    $arr_length = count($posts);
-    $keys = array_keys($posts);
+$n_posts = count($posts);
+$keys_posts = array_keys($posts);
 
-    for ($_i=0; $_i < $arr_length ; $_i++) { 
+for ($_i =0; $_i  < $n_posts; $_i ++) { 
+    $key = $keys_posts[$_i] ?>
+    <h1><?= $key ?></h1><?php
 
-        $post = $posts[$keys[$_i]];
-        echo "<div> {$keys[$_i]} </div>";
+    $posts_of_date = $posts[$key];
+    $n_posts_of_date = count($posts_of_date);
 
-        for ($_j=0; $_j < count($post); $_j++) { 
-            $page = $post[$_j];
-            echo "<span> {$page['title']} <br> {$page['author']} <br> {$page['text']} </span>";
-        }
+    for ($_j=0; $_j < $n_posts_of_date; $_j++) { 
+        $post = $posts_of_date[$_j]; ?>
+        <div>
+            <h2><?= $post['title'] ?></h2>
+            <h3><?= $post['author'] ?></h3>
+            <p><?= $post['text'] ?></p>
+        </div><?php
     }
-    ?>
-</body>
-</html>
+}

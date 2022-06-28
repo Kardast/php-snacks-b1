@@ -1,15 +1,17 @@
 <?php
 
 $newArray = [];
-
+$iterations = 0;
 while (count($newArray) < 15) {
     $number = rand(1, 100);
 
     if (!in_array($number, $newArray)) {
         $newArray[] = $number;
     }
+    $iterations++;
 }
 var_dump($newArray);
+echo "Sono state fatte $iterations iterazioni";
 ?>
 
 <!DOCTYPE html>
